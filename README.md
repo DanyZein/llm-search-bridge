@@ -90,7 +90,7 @@ Two smaller pieces of the same idea:
 ## Quickstart
 
 ```sh
-git clone https://github.com/<you>/llm-search-bridge
+git clone https://github.com/DanyZein/llm-search-bridge.git
 cd llm-search-bridge
 
 cp .env.example .env      # then edit it, or set the variables your own way

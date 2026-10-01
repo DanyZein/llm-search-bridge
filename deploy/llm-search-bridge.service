@@ -1,6 +1,6 @@
 [Unit]
 Description=llm-search-bridge (web search API backed by an LLM provider)
-Documentation=https://github.com/<you>/llm-search-bridge
+Documentation=https://github.com/DanyZein/llm-search-bridge
 After=network-online.target
 Wants=network-online.target
 
