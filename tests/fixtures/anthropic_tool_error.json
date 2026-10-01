@@ -1,0 +1,24 @@
+{
+  "id": "msg_03",
+  "type": "message",
+  "role": "assistant",
+  "model": "example-model",
+  "content": [
+    {
+      "type": "server_tool_use",
+      "id": "srvtoolu_02",
+      "name": "web_search",
+      "input": {"query": "example query"}
+    },
+    {
+      "type": "web_search_tool_result",
+      "tool_use_id": "srvtoolu_02",
+      "content": {
+        "type": "web_search_tool_result_error",
+        "error_code": "max_uses_exceeded"
+      }
+    }
+  ],
+  "stop_reason": "end_turn",
+  "usage": {"input_tokens": 900, "output_tokens": 40}
+}

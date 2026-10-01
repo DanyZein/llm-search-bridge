@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Virtual environments
+.venv/
+venv/
+
+# Local configuration and secrets. The negation has to come after the
+# wildcard, or the tracked example file would be ignored too.
+.env
+.env.*
+!.env.example
+
+# Logs and caches
+*.log
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Editors and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

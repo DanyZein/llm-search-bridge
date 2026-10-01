@@ -1,0 +1,3 @@
+# The target is Linux, and systemd rejects unit files with CRLF line endings.
+# Keep LF everywhere, whatever the developer's platform.
+* text=auto eol=lf

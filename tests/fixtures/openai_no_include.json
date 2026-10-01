@@ -1,0 +1,14 @@
+{
+  "id": "resp_03",
+  "object": "response",
+  "status": "completed",
+  "model": "example-model",
+  "output": [
+    {
+      "type": "web_search_call",
+      "id": "ws_02",
+      "status": "completed",
+      "action": {"type": "search", "query": "example query"}
+    }
+  ]
+}

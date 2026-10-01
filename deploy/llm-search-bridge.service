@@ -1,0 +1,34 @@
+[Unit]
+Description=llm-search-bridge (web search API backed by an LLM provider)
+Documentation=https://github.com/<you>/llm-search-bridge
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=llm-search-bridge
+Group=llm-search-bridge
+WorkingDirectory=/opt/llm-search-bridge
+# Holds the provider key, so it should be root-owned with mode 600.
+EnvironmentFile=/etc/llm-search-bridge.env
+Environment=PYTHONUNBUFFERED=1
+# ProtectSystem=strict makes /opt read-only, so bytecode caching has to stay off.
+Environment=PYTHONDONTWRITEBYTECODE=1
+ExecStart=/usr/bin/python3 /opt/llm-search-bridge/llm_search_bridge.py
+Restart=on-failure
+RestartSec=5
+
+# The service keeps no state and writes nothing to disk.
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectControlGroups=true
+LockPersonality=true
+RestrictNamespaces=true
+# AF_UNIX is required so DNS resolution through systemd-resolved keeps working.
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,68 @@
+{
+  "id": "resp_01",
+  "object": "response",
+  "status": "completed",
+  "model": "example-model",
+  "output": [
+    {
+      "type": "message",
+      "id": "msg_01",
+      "role": "assistant",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "text": "A short summary of the results [1][2].",
+          "annotations": [
+            {
+              "type": "url_citation",
+              "url": "https://example.com/a",
+              "title": "Page A",
+              "start_index": 0,
+              "end_index": 5
+            },
+            {
+              "type": "url_citation",
+              "url": "https://invented.example/z",
+              "title": "Invented",
+              "start_index": 6,
+              "end_index": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "reasoning",
+      "id": "rs_01",
+      "summary": []
+    },
+    {
+      "type": "web_search_call",
+      "id": "ws_01",
+      "status": "completed",
+      "action": {
+        "type": "search",
+        "query": "example query",
+        "sources": [
+          {"type": "url", "url": "https://example.com/a"},
+          {"type": "url", "url": "https://example.net/c"}
+        ]
+      },
+      "results": [
+        {
+          "type": "text_result",
+          "title": "Page A",
+          "url": "https://example.com/a",
+          "snippet": "Provider snippet for A."
+        },
+        {
+          "type": "text_result",
+          "title": "Page C",
+          "url": "https://example.net/c",
+          "snippet": "Provider snippet for C."
+        }
+      ]
+    }
+  ]
+}

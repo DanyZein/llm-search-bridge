@@ -1,0 +1,29 @@
+{
+  "id": "resp_02",
+  "object": "response",
+  "status": "completed",
+  "model": "example-model",
+  "output": [
+    {
+      "type": "message",
+      "id": "msg_02",
+      "role": "assistant",
+      "status": "completed",
+      "content": [
+        {
+          "type": "output_text",
+          "text": "An answer with a citation but no search call.",
+          "annotations": [
+            {
+              "type": "url_citation",
+              "url": "https://example.com/a",
+              "title": "Page A",
+              "start_index": 0,
+              "end_index": 4
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
